@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/barcelona.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>FC BARCELONA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+        *{
+          box-sizing: border-box;
+          margin: 0px;
+          list-style:none;
+          top:0;
+        } 
+        body{
+            background-color: rgb(49, 49, 87); 
+        }
+        .menuh{
+            background-color: rgb(49, 49, 87);
+            height:50px;
+            box-shadow: 0px 0px 10px red;
+        }
+        .menun{
+            display:none;
+        }
+        .men{
+            float:left;
+        }
+        ul{
+            display: none;
+        }
+
+        input:checked  ~ ul{
+            display:block;
+        }
+
+        input {
+            display: none;
+        }
+        label {
+            padding-top:5px;
+            box-sizing: border-box;
+            display: inline-block;
+            width: 40px;
+            height: 50px;
+            line-height: 30px;
+            font-weight: bold;
+            text-align: center;
+            user-select: none;
+            font-size: 40px;
+            color: red;
+        }
+        li{
+            text-decoration: none;
+            color: rgba(105, 105, 148, 0.911);
+            height:60px;
+            font-family: Oswald,sans-serif;
+            font-size: 16px;
+            display: inline-block;
+            padding-top:12px;
+            padding-bottom:12px;
+            text-transform: uppercase;
+            text-shadow: 0px 0px 1px rgba(128, 128, 173, 0.911);
+            font-weight: bold;
+            border: 1px solid rgba(105, 105, 148, 0.226);
+            text-align: center; 
+            background-color: rgb(49, 49, 87)
+        }
+        li a{
+            text-decoration: none;
+            font-family: Oswald,sans-serif;
+            font-size: 16px;
+            color: rgba(105, 105, 148, 0.911);
+            display: inline-block;
+            text-transform: uppercase;
+            text-shadow: 0px 0px 1px rgba(128, 128, 173, 0.911);
+            font-weight: bold;
+            text-align: center;
+        }
+        li:hover{
+            background-color: rgba(148, 34, 34, 0.589);
+            color: rgba(201, 40, 40, 0.658);
+            text-shadow: 0px 0px 1px rgb(180, 57, 57);
+        }
+        li a:hover{
+            background-color: transparent;
+            color: rgba(201, 40, 40, 0.658);
+            text-shadow: 0px 0px 1px rgb(180, 57, 57);
+        }
+        .imagen3{
+            float:left;
+        }
+        .imagen3 img{
+            width:100%;
+            height:45px;
+            padding-top: 5px;
+            padding-right: 5px;
+        }  
+        .presentacion{
+            height:290px;
+            background: linear-gradient(to bottom, rgba(49, 49, 87,0) 80%, rgba(49, 49, 87,1)), url(https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/d4d9f0dd-ae10-44b1-b4ac-f3a62b9126ef/playera-fc-barcelona-cb8HzN.png);
+            background-size: cover;
+            display:inline-block;
+        }
+        .presentacion2{
+            padding-top: 30%;
+            background-color: transparent;
+        }
+        .presentacion2 h2{
+            text-align: center;
+            color:rgb(121, 109, 109);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 40px;
+            background-color: transparent;
+            text-shadow: 0px 0px 15px rgba(155, 155, 14, 0.705);
+
+        }
+        .separador{
+            height:70px;
+        }
+        .separadort{
+            height:50px;
+        }
+        .partidos{
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.651);
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 30px;
+            margin-top:40px;
+            box-shadow: 0px 0px 15px rgb(121, 121, 224);
+            margin-bottom: 10px;
+        }
+        .partidos h2{
+            background-color: transparent;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            padding-top: 5px;
+            padding-left: 15px;
+            text-shadow: 0px 0px 10px red;
+        }
+        .separacion{
+            width:100%;
+            float:left;
+            height:5px;
+            background-color: rgb(170, 20, 20);
+        }
+        .partidoa{
+            display:none;
+        }
+        .compe{
+            background-color: transparent;
+            height:25px;
+            color:white;
+            text-align: center; 
+        }
+        .compe div{
+            margin-left: auto;
+            margin-right: auto;
+            height:25px;
+            background-color: transparent;
+
+        }
+        .compe img{
+            width:100%;
+            height:25px;
+            background-color: transparent;
+        }
+        .equipo{
+            height:120px;
+            background-color:transparent;
+            text-align:center;
+            float:left;
+        }
+        .equipo p{
+            background-color: transparent;
+            text-align:center;
+            font-size: 10px;
+            color:black;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border-radius: 25px;
+            text-shadow: 0px 0px 10px black;
+        }
+        .equipo img{
+            width:100%;
+            height: 100px;
+            background-color: transparent;
+        }
+        .marca{
+            height:100px;
+            background-color:transparent;
+            text-align:center;
+            float:left;
+            
+        }
+        .marca p{
+            height: 30px;
+            background-color: rgb(52, 52, 87);
+            text-align:center;
+            font-size: 15px;
+            color:white;
+            margin-top: 30px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border-radius: 25px;
+            text-shadow: 0px 0px 10px white;
+            padding-top: 5px;
+        }
+        .fecha{
+            height:20px;
+            background-color:rgb(52, 52, 87);
+            text-align:left;
+            float:left;
+        }
+        .fecha p{
+            height: 20px;
+            background-color: rgba(168, 36, 54, 0.425);
+            font-size: 15px;
+            color:white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .par{
+            height:20px;
+            background-color:transparent;
+            text-align:center;
+            float:left;
+        }
+        .par p{
+            height: 20px;
+            background-color: transparent;
+            font-size: 15px;
+            color:black;
+            font-family: Oswald;
+        }
+        .partidop{
+            margin-top: 40px;
+            background-color:transparent; 
+            align-items: top;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .partidop div{
+            background-color: transparent;
+        }
+        .equi{
+            color:white;
+            font-family: Oswald;
+            text-align: center;
+            font-size:40px;
+            text-shadow: 0px 0px 15px red;
+        }
+        .separadort{
+            height:20px;
+        }
+        .separadore{
+            height:40px;
+        }
+        .equipacion{
+            background-color:white;
+            height:350px;
+            margin-left:auto;
+            margin-right:auto;
+            text-align: center;
+            box-shadow: 0px 0px 300px red;
+            border-radius:20px;
+            margin-bottom: 20px;
+        }
+        .equipacion img{
+            width:100%;
+            height:280px;
+            background-color: grey;
+            border: 1px solid black;
+            border-top-left-radius:18px;
+            border-top-right-radius:18px;
+        }
+        .equipacion p{
+            height:70px;
+            width:100%;
+            font-family: Oswald;
+            font-size:20px;
+            color:rgb(6, 6, 48);
+            padding-top: 8px;
+            background-color: rgb(136, 26, 24);
+            border: 1px solid black;
+            border-bottom-left-radius:18px;
+            border-bottom-right-radius:18px;
+        }
+        .jugador{
+            background-color: rgb(4, 4, 53);
+            height:300px;
+            margin-left: auto;
+            margin-right:auto;
+            text-align: center;
+            box-shadow: 0px 0px 15px black;
+            border: 1px solid black;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .jugador img{
+            width:100%;
+            height:200px;
+            background-image: url(https://i.pinimg.com/originals/dd/77/17/dd771737be4e1e6bbdef45782fbf21f1.jpg);
+            background-size: cover;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+        }
+        .jugador div{
+            background-color:  rgb(4, 4, 53);
+            height:32.5px;
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+        .numero p{
+            font-size:25px;
+            text-align: center;
+            font-family: Oswald;
+            color:rgba(253,197,44,255);
+            width:100%;
+            background-color: transparent;
+        }
+        .demas p{
+            font-size:15px;
+            text-align: center;
+            font-family: Oswald;
+            color:rgba(253,197,44,255);
+            width:100%;
+            background-color: transparent;
+            padding-top: 5px;
+        }
+        .patrocinadores{
+            height:150px;
+            border-radius: 30px;
+            background-image: url(https://www.fcbarcelona.com/photo-resources/2019/09/16/f65a0028-03c8-4220-a945-5ff23e7445f6/cabecera_bar-a_fans_GENERICA.jpg?width=1200&height=525);
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: 1px solid rgba(113, 113, 194, 0.548);
+            margin-left: auto;
+            margin-right: auto;
+            text-align:center;
+            color:rgba(253,197,44,255);
+            box-shadow:0px 0px 10px yellow;
+            margin-bottom: 10px;
+        }
+        .patrocinadores h2{
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: transparent;
+            text-shadow: 0px 0px 0px rgb(177, 177, 75);
+        }
+        .patro{
+            height:170px;
+            float:left;
+            background-color: transparent;  
+        }
+        .patro img{
+            width:100%;
+            height:80px;
+            background-color:transparent;
+        }
+        .patro a{
+            background-color:transparent;
+        }
+        .beko img{
+            height:70px;
+            padding-top: 20px;
+        }
+
+        .titulos{
+            height:140px;
+            border-radius: 30px;
+            background-color: rgba(18,16,37,255);
+            border: 1px solid rgba(113, 113, 194, 0.548);
+            margin-left: auto;
+            margin-right: auto;
+            text-align:center;
+            box-shadow: 0px 0px 10px yellow;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        .titulos h2{
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            background-color: transparent;
+            color:rgba(253,197,44,255);
+            text-shadow: 0px 0px 10px rgb(177, 177, 75);
+            text-decoration: none;
+        }
+        .titu{
+            height:120px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: transparent;
+
+        }
+        .titu img{
+            width:100%;
+            height:52px;
+            background-color:transparent;
+        }
+        .redes{
+            text-align:center;
+            color:white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border-top: 2px solid black;
+            box-shadow: 0px 0px 15px red;
+
+        }
+        .redes h3{
+            font-size: 15px;
+            height:30px;
+            padding-top:20px;
+        }
+        .red{
+            height:60px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0px 0px 0px transparent;
+        }
+        .reds{
+            height:60px;
+            float:left;
+        }
+        .reds img{
+            width:100%;
+            height:60px;
+            padding-left:3px;
+            padding-right:3px;
+            padding-top:3px;
+            padding-bottom:3px;
+        }
+        .creditos{
+            height:120px;
+            background-color: rgba(18,16,37,255);
+            padding-top: 15px;
+            margin-top:120px;
+        }
+        .creditos p{
+            background-color: transparent;
+            font-size: 10px;
+            float: left;
+            text-align:center;
+        }
+        .creditos a{
+            text-decoration: none;
+            background-color: transparent;
+            font-size: 10px;
+            height: 25px;
+            float: left;
+            color:white;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align:center;
+        }
+        .creditos a:hover{
+            font-size:15px;
+        }        
+        /*pc*/
+        @media only screen and (min-width:767px){
+            .menuh{
+                display: none;
+            }
+            nav{
+                position:fixed;
+            }
+            .menun{
+                display:block;
+                background-color: rgb(49, 49, 87);
+                height:80px;
+                float:left;
+                text-align: center;
+                box-shadow: 0 0 50px red;
+            }
+            .imagen{
+                float:left;
+                padding-top:10px;
+                padding-left: 40px;
+                height:80px;
+                border-left: 5px solid rgb(0, 0, 145);
+                border-right: 5px solid rgb(184, 0, 0);
+                text-align:left;
+            }
+            .imagen:hover{
+                border-bottom: 5px solid rgb(184, 0, 0);
+                border-top: 5px solid rgb(0, 0, 145);
+                padding-top:4px;
+            }
+            .imagen1{
+                width:80%;
+                height: 60px;
+            }
+            .opciones{
+                float:left;
+            }
+            .opcion{
+                text-decoration: none;
+                color: rgba(105, 105, 148, 0.911);
+                height:60px;
+                font-family: Oswald,sans-serif;
+                font-size: 20px;
+                display: block;
+                padding-top:12px;
+                padding-bottom:12px;
+                text-transform: uppercase;
+                text-shadow: 0px 0px 1px rgba(128, 128, 173, 0.911);
+                float:left;
+                font-weight: bold;
+                border: 1px solid rgba(105, 105, 148, 0.226);
+            } 
+            .opcion:hover{
+                background-color: rgba(148, 34, 34, 0.589);
+                color: rgba(201, 40, 40, 0.658);
+                text-shadow: 0px 0px 1px rgb(180, 57, 57);
+            }  
+            .espacio{
+                height:20px;
+                float:right;
+                border: 1px solid rgba(105, 105, 148, 0.226);
+            }
+            .imagen2{
+                float:left;
+            }
+            .imagen2 img{
+                padding-top: 10px;
+                width: 60%;
+            }
+            .presentacion{
+                height:600px;
+                background: linear-gradient(to bottom, rgba(49, 49, 87,0) 80%, rgba(49, 49, 87,1)), url(https://www.mendozapost.com/files/image/69/69076/56e0916ebf073.jpg);
+                background-size: cover;
+                display:inline-block;
+            }
+            .presentacion2{
+                padding-top: 30%;
+                background-color: transparent;
+            }
+            .presentacion2 h2{
+                text-align: center;
+                color:white;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: 70px;
+                background-color: transparent;
+                text-shadow: 0px 0px 15px rgb(49, 49, 87);
+
+            }
+            .separador{
+                height:150px;
+            }
+            .separadort{
+                height:50px;
+            }
+            .partidos{
+                height: 450px;
+                background-color: rgba(255, 255, 255, 0.651);
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 30px;
+                margin-top:40px;
+                box-shadow: 0px 0px 15px rgb(121, 121, 224);
+                margin-bottom: 10px;
+            }
+            .partidos h2{
+                background-color: transparent;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-weight: bold;
+                padding-top: 5px;
+                padding-left: 15px;
+                text-shadow: 0px 0px 10px red;
+            }
+            .separacion{
+                width:100%;
+                float:left;
+                height:10px;
+                background-color: rgb(170, 20, 20);
+            }
+            .partidoa{
+                margin-top: 40px;
+                background-color:transparent; 
+                display: inline-block;
+            }
+            .partidoa div{
+                background-color: transparent;
+            }
+            .compe{
+                background-color: transparent;
+                height:30px;
+                color:white;
+                text-align: center; 
+            }
+            .compe div{
+                margin-left: auto;
+                margin-right: auto;
+                height:30px;
+                background-color: transparent;
+
+            }
+            .compe img{
+                width:100%;
+                height:30px;
+                background-color: transparent;
+            }
+            .equipo{
+                height:180px;
+                background-color:transparent;
+                text-align:center;
+                float:left;
+            }
+            .equipo p{
+                background-color: transparent;
+                text-align:center;
+                font-size: 15px;
+                color:black;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                border-radius: 25px;
+                text-shadow: 0px 0px 10px black;
+            }
+            .equipo img{
+                width:100%;
+                height: 150px;
+                background-color: transparent;
+            }
+            .marca{
+                height:150px;
+                background-color:transparent;
+                text-align:center;
+                float:left;
+                
+            }
+            .marca p{
+                height: 50px;
+                background-color: rgb(52, 52, 87);
+                text-align:center;
+                font-size: 30px;
+                color:white;
+                margin-top: 50px;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                border-radius: 25px;
+                text-shadow: 0px 0px 10px white;
+                padding-top: 5px;
+            }
+            .fecha{
+                height:40px;
+                background-color:rgb(52, 52, 87);
+                text-align:left;
+                float:left;
+            }
+            .fecha p{
+                height: 40px;
+                background-color: rgba(168, 36, 54, 0.425);
+                font-size: 25px;
+                color:white;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            }
+            .par{
+                height:30px;
+                background-color:transparent;
+                text-align:center;
+                float:left;
+            }
+            .par p{
+                height: 30px;
+                background-color: transparent;
+                font-size: 20px;
+                color:black;
+                font-family: Oswald;
+            }
+            .partidop{
+                margin-top: 40px;
+                background-color:transparent; 
+                align-items: top;
+                float:right;
+            }
+            .partidop div{
+                background-color: transparent;
+            }
+            .equi{
+                color:white;
+                font-family: Oswald;
+                text-align: center;
+                font-size:80px;
+                text-shadow: 0px 0px 15px red;
+            }
+            .equipaciones{
+                height:450px;
+            }
+            .espa{
+                height:450px;
+                background-color: transparent;
+                float:left;
+            }
+            .equipacion{
+                background-color:white;
+                height:450px;
+                float:left;
+                text-align: center;
+                box-shadow: 0px 0px 300px red;
+                border-radius:20px;
+            }
+            .equipacion:hover{
+                height:500px;
+            }
+            .equipacion p:hover{
+                height:140px;
+            }
+            .equipacion img:hover{
+                height:410px;
+            }
+            .equipacion img{
+                width:100%;
+                height:360px;
+                background-color: grey;
+                border: 1px solid black;
+                border-top-left-radius:18px;
+                border-top-right-radius:18px;
+            }
+            .equipacion p{
+                height:90px;
+                width:100%;
+                font-family: Oswald;
+                font-size:30px;
+                color:rgb(6, 6, 48);
+                background-color: rgb(136, 26, 24);
+                border: 1px solid black;
+                border-bottom-left-radius:18px;
+                border-bottom-right-radius:18px;
+                padding:0px;
+            }
+            .espa2{
+                height:400px;
+                background-color: transparent;
+                float:left;
+            }
+            .jugador{
+                background-color: rgb(4, 4, 53);
+                height:400px;
+                float:left;
+                text-align: center;
+                box-shadow: 0px 0px 15px black;
+                border: 1px solid black;
+                border-radius: 15px;
+                
+            }
+            .jugador img{
+                width:100%;
+                height:250px;
+                background-image: url(https://i.pinimg.com/originals/dd/77/17/dd771737be4e1e6bbdef45782fbf21f1.jpg);
+                background-size: cover;
+                border-top-right-radius: 15px;
+                border-top-left-radius: 15px;
+            }
+            .jugador:hover{
+                height:420px;
+            }
+            .jugador img:hover{
+                height:270px;
+            }
+            .jugador div{
+                background-color:  rgb(4, 4, 53);
+                height:49.2px;
+                border-bottom-right-radius: 15px;
+                border-bottom-left-radius: 15px;
+            }
+            .numero p{
+                font-size:40px;
+                text-align: center;
+                font-family: Oswald;
+                color:rgba(253,197,44,255);
+                width:100%;
+                background-color: transparent;
+            }
+            .demas p{
+                font-size:20px;
+                text-align: center;
+                font-family: Oswald;
+                color:rgba(253,197,44,255);
+                width:100%;
+                background-color: transparent;
+                padding-top: 15px;
+            }
+            .separadore{
+                height:500px;
+                
+            }
+            .patrocinadores{
+                height:300px;
+                border-radius: 30px;
+                background-image: url(https://www.fcbarcelona.com/photo-resources/2019/09/16/f65a0028-03c8-4220-a945-5ff23e7445f6/cabecera_bar-a_fans_GENERICA.jpg?width=1200&height=525);
+                background-size: cover;
+                background-repeat: no-repeat;
+                border: 1px solid rgba(113, 113, 194, 0.548);
+                margin-left: auto;
+                margin-right: auto;
+                text-align:center;
+                color:rgba(253,197,44,255);
+                box-shadow: 0px 0px 10px yellow;
+                margin-bottom: 10px;
+            }
+            .patrocinadores h2{
+                font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: 40px;
+                font-weight: bold;
+                background-color: transparent;
+                text-shadow: 0px 0px 10px rgb(177, 177, 75);
+            }
+            .espa3{
+                height:200px;
+                background-color: transparent;
+                float:left;
+            }
+            .patro{
+                height:200px;
+                float:left;
+                background-color: transparent;  
+            }
+            .patro img{
+                width:100%;
+                height:200px;
+                background-color:transparent;
+            }
+            .patro:hover{
+                border-bottom: 3px solid rgba(253,197,44,255);
+            }
+            .patro a{
+                background-color:transparent;
+            }
+            .beko img{
+                height:170px;
+                padding-top: 30px;
+            }
+            .titulos{
+                height:200px;
+                border-radius: 30px;
+                background-color: rgba(18,16,37,255);
+                border: 1px solid rgba(113, 113, 194, 0.548);
+                margin-left: auto;
+                margin-right: auto;
+                text-align:center;
+                box-shadow: 0px 0px 10px yellow;
+                text-decoration: none;
+                margin-bottom: 10px;
+            }
+            .titulos h2{
+                font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: 40px;
+                font-weight: bold;
+                background-color: transparent;
+                color:rgba(253,197,44,255);
+                text-shadow: 0px 0px 10px rgb(177, 177, 75);
+                text-decoration: none;
+            }
+            .espa4{
+                height:200px;
+                background-color: transparent;
+                float:left;
+            }
+            .titu{
+                height:200px;
+                float:left;
+                background-color: transparent;
+
+            }
+            .titu img{
+                width:100%;
+                height:100px;
+                background-color:transparent;
+            }
+            .redes{
+                height:280px;
+                text-align:center;
+                color:white;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                border-top: 2px solid black;
+                box-shadow: 0px 0px 15px red;
+
+            }
+            .redes h3{
+                font-size: 25px;
+                height:50px;
+                padding-top:20px;
+            }
+            .redes div{
+                box-shadow: 0px 0px 0px transparent;
+            }
+            .red{
+                height:100px;
+                margin-left: auto;
+                margin-right: auto;
+                box-shadow: 0px 0px 0px transparent;
+            }
+            .reds{
+                height:100px;
+                float:left;
+                padding-left:5px;
+                padding-right:5px;
+            }
+            .reds img{
+                width:100%;
+                height:100px;
+                padding:0px;
+            }
+            .reds img:hover{
+                border: 2px solid white;
+            }
+            .creditos{
+                height:70px;
+                background-color: rgba(18,16,37,255);
+                padding-top: 15px;
+                margin-top:0px;
+            }    
+            .creditos p{
+                background-color: transparent;
+                font-size: 15px;
+                float: left;
+                text-align:right;
+            }
+            .creditos a{
+                text-decoration: none;
+                background-color: transparent;
+                font-size: 15px;
+                float: left;
+                color:white;
+                font-weight: bold;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                text-align:center;
+            }
+            .creditos a:hover{
+                font-size:20px;
+            }        
+        }    
+    </style>
+</head>
+<body>
+    <nav class="col-12 col-lg-12 menuh">
+        <div class="men col-10">
+            <input type="checkbox" id="menu">
+            <label for="menu"> ☰ </label>
+            <ul>
+                <li class="col-6"><a href="">NOTICIAS</a></li>
+                <li class="col-6"><a href="">CALENDARIO</a></li>
+                <li class="col-6"><a href="">PALMARÉS</a></li>
+            </ul>
+        </div>
+        <div class="imagen3 col-2">
+            <img src="img/barcelona.png">
+        </div>
+
+    </nav>
+    <nav class="col-12 col-m-12 col-g-12 menun">
+        <div class="imagen col-12 col-lg-3">
+            <img src="img/FCBARCELONA.png" class="imagen1">
+        </div>    
+        <div class="opciones col-12 col-lg-9">
+            <a class="espacio col-12 col-lg-12"></a>
+            <a href="https://david10dx.github.io/desarrolloapps/" class="opcion l-12 col-lg-2">NOTICIAS</a>
+            <a href="https://david10dx.github.io/dise-oweb/" class="opcion l-12 col-lg-2">CALENDARIO</a>
+            <a href="https://david10dx.github.io/kepixelh/" class="opcion l-12 col-lg-2">PALMARÉS</a>
+            <div class="imagen2 col-12 col-lg-6">
+                <img src="img/mesqueunclub.png">
+            </div>
+        </div>
+    </nav>
+    <div class="presentacion col-12 col-lg-12">
+        <div class="presentacion2 col-12 col-lg-12">
+            <h2>¡Bienvenido a la Pagina de todos los Culés!</h2>
+        </div>
+    </div>
+    <div class="separador col-12 col-lg-12"></div>
+    <div class="partidos col-11 col-lg-11">
+        <div>
+            <h2>Encuentros</h2>
+            <p class="separacion col-12 col-lg-12"></p>
+        </div>
+        <div class="partidoa col-12 col-lg-5">
+            <a href="">
+                <div class="compe col-12 col-lg-12">
+                    <div class="col-12 col-lg-1">
+                        <img src="https://brandslogos.com/wp-content/uploads/images/large/uefa-champions-league-logo.png">
+                    </div>
+                </div>
+                <div class="equipo col-12 col-lg-4">
+                    <img src="img/barcelona.png">
+                    <p>FC Barcelona</p>
+                </div>
+                <div class="marca col-12 col-lg-4">
+                    <p>0-3</p>
+                </div>
+                <div class="equipo col-12 col-lg-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Logo_FC_Bayern_M%C3%BCnchen_%282002%E2%80%932017%29.svg/1024px-Logo_FC_Bayern_M%C3%BCnchen_%282002%E2%80%932017%29.svg.png">
+                    <p>FC Bayern</p>
+                </div>
+                <div class="fecha col-12 col-lg-12">
+                    <p>| 14 SEPTIEMBRE 2021 / 1:00pm</p>
+                </div>
+                <div class="par col-12 col-lg-12">
+                    <p>Partido Anterior</p>
+                </div>
+            </a>
+        </div>
+        <div class="partidop col-10 col-lg-5">
+            <a href="">
+                <div class="compe col-12 col-lg-12">
+                    <div class="col-1 col-lg-1">
+                        <img src="https://assets.laliga.com/assets/logos/laliga-v-monocolor/laliga-v-monocolor-1200x1200.png">
+                    </div>
+                </div>
+                <div class="equipo col-4 col-lg-4">
+                    <img src="img/barcelona.png">
+                    <p>FC Barcelona</p>
+                </div>
+                <div class="marca col-4 col-lg-4">
+                    <p> - </p>
+                </div>
+                <div class="equipo col-4 col-lg-4">
+                    <img src="https://usercontent.one/wp/www.fotball-info.com/wp-content/uploads/2019/09/granada.png">
+                    <p>Granada CF</p>
+                </div>
+                <div class="fecha col-12 col-lg-12">
+                    <p>| 20 SEPTIEMBRE 2021 / 1:00pm</p>
+                </div>
+                <div class="par col-12 col-lg-12">
+                    <p>Partido Siguiente</p>
+                </div>
+            </a>
+        </div>  
+    </div>
+    <div class="separador col-12 col-lg-12"></div>
+    <div>
+        <h1 class="equi col-12 col-lg-12">Equipaciones</h1>
+    </div> 
+    <div class="separadort col-12 col-lg-12"></div>
+    <div class="equipaciones col-12 col-lg-12">
+        <div class="espa col-8 col-lg-2"></div>
+        <div class="equipacion col-8 col-lg-2">
+            <img src="https://www.fcbarcelona.com/photo-resources/2021/09/13/e6d84c15-c426-497f-a504-10efb3516af4/camisetas-811x891-03.png?width=300&height=436">
+            <p>Primera Equipación</p>
+        </div>
+        <div class="espa col-12 col-lg-1"></div>
+        <div class="equipacion col-8 col-lg-2">
+            <img src="https://www.fcbarcelona.com/photo-resources/2021/09/13/9d3a93b1-ef97-4c7a-9f55-1f6716b1c6c8/camisetas-811x891-01.png?width=300&height=436">
+            <p>Segunda Equipación</p>
+        </div>
+        <div class="espa col-12 col-lg-1"></div>
+        <div class="equipacion col-8 col-lg-2">
+            <img src="https://www.fcbarcelona.com/photo-resources/2021/09/13/4b783f82-1d82-473e-970a-2b73e9d6b834/camisetas-811x891-02.png?width=300&height=436">
+            <p>Tercera Equipación</p>
+        </div>
+        <div class="espa col-12 col-lg-2"></div>
+    </div>  
+    <div class="separador col-12 col-lg-12"></div>
+    <h1 class="equi col-12 col-lg-12">Plantilla</h1>
+    <div class="separadort col-12 col-lg-12"></div>
+    <div class="espa2 col-12 col-lg-2"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="img/marc.png">
+        <div class="numero col-12 col-lg-12">
+            <p>1</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Marc André Ter Stegen</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Portero</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p69752/512x512/p69752_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>13</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Norberto Neto</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Portero</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p210341/512x512/p210341_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>26</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Iñaki Peña</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Portero</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-2"></div>
+
+    <div class="separadore col-12 col-lg-12"></div>
+
+    <div class="espa2 col-12 col-lg-2"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p250676/512x512/p250676_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>2</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Sergiño Dest</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Defensa</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p18221/512x512/p18221_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>3</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Gerard Piqué</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Defensa</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p445087/512x512/p445087_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>4</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Ronald Araujo</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Defensa</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-2"></div>
+
+    <div class="separadore col-12 col-lg-12"></div>
+
+    <div class="espa2 col-12 col-lg-2"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p171101/512x512/p171101_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>15</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Clement Lenglet</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Defensa</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p52356/512x512/p52356_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>18</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Jordi Alba</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Defensa</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p242313/512x512/p242313_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>22</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Óscar Mingueza</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Defensa</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-2"></div>
+    
+    <div class="separadore col-12 col-lg-12"></div>
+
+    <div class="espa2 col-12 col-lg-2"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p88580/512x512/p88580_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>23</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Samuel Umtiti</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Defensa</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p432656/512x512/p432656_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>24</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Eric García</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Defensa</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p493019/512x512/p493019_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>31</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Alejandro Balde</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Defensa</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-2"></div>
+    
+    <div class="separadore col-12 col-lg-12"></div>
+
+    <div class="espa2 col-12 col-lg-2"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p54104/512x512/p54104_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>5</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Sergio Busquets</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Mediocampista</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p437765/512x512/p437765_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>6</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Riqui Puig</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Mediocampista</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p84583/512x512/p84583_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>14</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Phillippe Coutinho</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Mediocampista</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-2"></div>
+     
+    <div class="separadore col-12 col-lg-12"></div>
+
+    <div class="espa2 col-12 col-lg-2"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p490541/512x512/p490541_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>16</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Pedro González "Pedri"</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Mediocampista</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p86157/512x512/p86157_t178_2021_0_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>20</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Sergi Roberto</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Mediocampista</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p209712/512x512/p209712_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>21</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Frenkie De Jong</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Mediocampista</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-2"></div>
+
+    <div class="separadore col-12 col-lg-12"></div>
+
+    <div class="espa2 col-12 col-lg-2"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p465694/512x512/p465694_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>28</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Nico González</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Mediocampista</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p500046/512x512/p500046_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>30</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Pablo Gavira "Gavi"</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Mediocampista</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p219438/512x512/p219438_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>7</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Ousmane Dembélé</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Delantero</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-2"></div>
+    
+    <div class="separadore col-12 col-lg-12"></div>
+
+    <div class="espa2 col-12 col-lg-2"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p106824/512x512/p106824_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>9</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Memphis Depay</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Delantero</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p465607/512x512/p465607_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>10</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Ansu Fati</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Delantero</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p487747/512x512/p487747_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>11</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Yusuf Demir</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Delantero</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-2"></div>
+    
+    <div class="separadore col-12 col-lg-12"></div>
+
+    <div class="espa2 col-12 col-lg-2"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p68690/512x512/p68690_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>12</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Martin Braithwaite</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Delantero</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://www.fcbarcelona.com/photo-resources/2021/09/02/03bb2552-d23f-4d68-88e1-493ef401e94f/mini_Luuk-de-Jong-silueta_ok.png?width=670&height=790">
+        <div class="numero col-12 col-lg-12">
+            <p>17</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Luuk De Jong</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Delantero</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-1"></div>
+    <div class="jugador col-8 col-lg-2">
+        <img src="https://assets.laliga.com/squad/2021/t178/p37572/512x512/p37572_t178_2021_1_003_000.png">
+        <div class="numero col-12 col-lg-12">
+            <p>19</p>
+        </div> 
+        <div class="demas col-12 col-lg-12">  
+            <p>Sergio "Kun" Agüero</p>
+        </div>
+        <div class="demas col-12 col-lg-12">       
+            <p>Delantero</p>
+        </div>         
+    </div>
+    <div class="espa2 col-12 col-lg-2"></div>
+
+    <div class="separadore col-12 col-lg-12"></div>
+
+    <div class="patrocinadores col-10 col-lg-11">
+        <h2 class="col-12 col-lg-12">Patrocinadores Principales</h2>
+        <div class="espa3 col-12 col-lg-2"></div>
+        <div class="patro col-4 col-lg-2">
+            <a href="https://www.nike.com/" target="_blank">
+                <img src="img/nike.png">
+            </a>
+        </div>    
+        <div class="espa3 col-12 col-lg-1"></div>
+        <div class="patro col-4 col-lg-2">
+            <a href="https://global.rakuten.com/corp/about/" target="_blank">
+                <img src="img/Rakuten.png">
+            </a>
+        </div>
+        <div class="espa3 col-12 col-lg-1"></div>
+        <div class="patro beko col-4 col-lg-2">
+            <a href="https://www.beko.com/es-es" target="_blank">
+                <img src="img/beko.png">
+            </a>   
+        </div>
+        <div class="espa2 col-12 col-lg-2"></div>
+    </div>
+    <div class="separador col-12 col-lg-12"></div>
+    <div class="titulos col-10 col-lg-11">  
+        <h2 class="col-12 col-lg-12">Títulos</h2>
+        <div class="espa4 col-12 col-lg-1"></div>
+        <div class="titu col-12 col-lg-10">
+            <a href="">
+                <img src="img/titulos.jpg">
+            </a>
+        </div>
+        <div class="espa4 col-12 col-lg-1"></div>
+    </div> 
+    <div class="separador col-12 col-lg-12"></div>
+    <div class="redes col-12 col-lg-12">
+        <h3 class="col-12 col-lg-12">Sigue al Barça en redes sociales</h3>
+        <div class="red col-10 col-lg-8">
+            <div class="reds col-6 col-lg-2">
+                <a href="https://chats.viber.com/fcbarcelona" target="_blank">
+                    <img src="img/red1.jpg">
+                </a>
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://www.facebook.com/fcbarcelona/">
+                    <img src="img/face.jpg">
+                </a>
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://twitter.com/fcbarcelona_es" target="_blank">
+                    <img src="img/twitter.jpg">
+                </a>
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://www.youtube.com/user/fcbarcelona" target="_blank">
+                    <img src="img/youtube.jpg">
+                </a>    
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://www.instagram.com/fcbarcelona/" target="_blank">
+                    <img src="img/insta.jpg">
+                </a>    
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://www.tiktok.com/@fcbarcelona" target="_blank">
+                    <img src="img/tiktok.jpg">
+                </a>    
+            </div>
+        </div>
+        <div class="separadort col-12 col-lg-12"></div>
+        <div class="creditos col-12 col-lg-12">
+            <p class="col-12 col-lg-2">Creadores:</p>
+            <a href="https://www.facebook.com/erickdavid.blancosantos/" target="_blank" class="col-12 col-lg-3">||Erick David Blanco||</a> 
+            <a href="https://www.facebook.com/hectorjosue.rodriguesdiscua" target="_blank" class="col-12 col-lg-3">||Héctor Josué Rodrigues||</a>
+            <a href="https://www.facebook.com/profile.php?id=100011257620607" target="_blank" class="col-12 col-lg-3">||Waldin Francisco Castillo||</a>
+           
+        </div>
+    </div>         
+</body>
+</html>
